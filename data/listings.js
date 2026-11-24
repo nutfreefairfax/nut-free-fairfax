@@ -32,7 +32,7 @@ window.LISTINGS = [
     phone: "703-277-9999",
     website: "https://fairfaxbakery.com",
     lastVerified: "2026-11-24",
-    staffSaid: "Staff said they use walnuts and pistachios in the bakery, and that about 90 percent of their products are nut free. They said they bake allergy orders separately and check ingredient sources before adding them.",
-    notes: "I did not ask about peanuts."
+    staffSaid: "Staff said they do not use peanuts. The only nuts they use are walnuts and pistachios, and about 90 percent of their products are nut free. They said they bake allergy orders separately and check ingredient sources before adding them.",
+    notes: "Not a nut free kitchen. Ask which items have walnuts or pistachios."
   }
 ];
