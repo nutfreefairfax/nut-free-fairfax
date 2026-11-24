@@ -3,7 +3,7 @@
 // lastVerified format: YYYY-MM-DD
 // cuisine: type any label, but spell it the same way every time (Bakery, American, Italian...).
 // level: leave out for 100% nut free places. Use "accommodates" for places that are NOT nut free but told you how they handle allergy orders.
-// kitchen: use exactly "dedicated" (dedicated nut free kitchen), "shared" (no nuts on menu, shared kitchen) or "nuts" (uses nuts in the kitchen).
+// kitchen: use exactly "dedicated" (dedicated nut free kitchen), "shared" (no nuts on menu, shared kitchen), "nuts" (uses nuts in the kitchen) or "stored" (nuts stored on site).
 //          Leave it out if staff did not say. Only record what staff told you.
 // area: spell it the same way every time. Use "City of Fairfax" for places inside the city.
 // staffSaid: say what STAFF told you, in plain words.
@@ -34,5 +34,18 @@ window.LISTINGS = [
     lastVerified: "2026-11-24",
     staffSaid: "Staff said they do not use peanuts. They do use tree nuts, specifically walnuts and pistachios. They said about 90 percent of their products are nut free. They said they bake allergy orders separately and check ingredient sources before adding them.",
     notes: "Tree nuts are used in this bakery. I did not ask about other tree nuts, so ask them directly."
+  },
+  {
+    name: "Manjares Bakery",
+    type: "bakery",
+    level: "accommodates",
+    area: "Fairfax",
+    cuisine: "Mexican bakery",
+    kitchen: "stored",
+    address: "9540 Blenheim Blvd, Fairfax, VA 22031",
+    phone: "571-596-4660",
+    lastVerified: "2026-11-24",
+    staffSaid: "Staff said there are no peanuts or tree nuts in the kitchen, but nuts are kept in their storage room, and everything has its own compartment.",
+    notes: "This covers what they told me about their kitchen, not individual ingredients or products."
   }
 ];

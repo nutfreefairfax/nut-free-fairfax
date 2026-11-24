@@ -45,7 +45,8 @@
     var map = {
       dedicated: "Dedicated nut free kitchen",
       shared: "No nuts on menu, shared kitchen",
-      nuts: "Uses nuts in the kitchen"
+      nuts: "Uses nuts in the kitchen",
+      stored: "Nuts stored on site"
     };
     return map[k] ? '<p class="chips"><span class="chip">' + map[k] + "</span></p>" : "";
   }
