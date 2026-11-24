@@ -93,8 +93,9 @@
       if (area !== "all" && i.area !== area) return false;
       return true;
     });
-    // Newest verified first
-    items.sort(function (a, b) { return a.lastVerified < b.lastVerified ? 1 : -1; });
+    // Alphabetical by name (ignores a leading "The ")
+    function sortName(i) { return i.name.replace(/^the\s+/i, "").toLowerCase(); }
+    items.sort(function (a, b) { return sortName(a).localeCompare(sortName(b)); });
     var noneInTab = !(window.LISTINGS || []).some(function (i) { return levelOf(i) === currentLevel; });
     listEl.innerHTML = items.map(card).join("") ||
       '<p class="empty">' + (noneInTab
