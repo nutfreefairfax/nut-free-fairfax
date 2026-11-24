@@ -14,7 +14,7 @@
     nutfree: "",
     accommodates:
       "These places are not nut-free, and nuts may be used in their kitchens or pose a risk of cross-contact. " +
-      "They\u2019ve shared how they handle food allergy requests, which we\u2019ve included to help you make informed choices. " +
+      "They\u2019ve shared how they handle food allergy requests, which I\u2019ve included to help you make informed choices. " +
       "Please remember that practices can vary, and no allergen-free meal is guaranteed. " +
       "Always call ahead, discuss your specific allergy with the staff, and decide if you\u2019re comfortable dining there."
   };
