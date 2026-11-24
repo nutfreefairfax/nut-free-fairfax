@@ -13,9 +13,10 @@
   var TAB_NOTES = {
     nutfree: "",
     accommodates:
-      "<strong>These places are not nut free.</strong> Their kitchens use nuts or may have cross contact. " +
-      "Each one told me how they handle allergy orders, and I show their words on the card. " +
-      "That is not a promise. Call them, tell them about your allergy, and decide for yourself before you go."
+      "These places are not nut-free, and nuts may be used in their kitchens or pose a risk of cross-contact. " +
+      "They\u2019ve shared how they handle food allergy requests, which we\u2019ve included to help you make informed choices. " +
+      "Please remember that practices can vary, and no allergen-free meal is guaranteed. " +
+      "Always call ahead, discuss your specific allergy with the staff, and decide if you\u2019re comfortable dining there."
   };
 
   function levelOf(i) { return i.level === "accommodates" ? "accommodates" : "nutfree"; }
