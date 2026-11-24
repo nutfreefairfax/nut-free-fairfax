@@ -27,7 +27,7 @@
       <div class="hero-text">
         <p class="eyebrow">Fairfax County, Virginia</p>
         <h1>Find a place to eat in Fairfax County, VA with a little <em>more confidence.</em></h1>
-        <p class="lead">Explore Fairfax County restaurants and bakeries that have confirmed they are peanut and tree nut free. Each listing is checked directly with the business and shows the date it was last checked.</p>
+        <p class="lead">Explore Fairfax County restaurants and bakeries that have confirmed they are peanut and tree nut free. Each listing is checked directly with the business and shows the date it was last checked. A second tab lists places that are not nut free but told me how they handle nut allergies.</p>
         <p class="closer">A little less searching. A little more enjoying the meal.</p>
         <p class="cta"><a class="btn" href="#list">Browse the list</a> <a class="btn ghost" href="#how">How I check</a></p>
       </div>
@@ -40,7 +40,7 @@
 
   <section class="strip" aria-label="Site facts">
     <div class="wrap strip-in">
-      <p><strong id="statCount">0</strong> places confirmed with the business</p>
+      <p><strong id="statCount">0</strong> 100% nut free places confirmed with the business</p>
       <p>Last updated <strong id="statUpdated">soon</strong></p>
       <p>Places can't pay to be listed</p>
     </div>
@@ -54,10 +54,17 @@
       <div class="disclaimer" role="note">
         <h3>A quick note before you eat</h3>
         <p>This directory is an informational resource, not a guarantee of allergen safety or a substitute for medical advice. Please keep following your healthcare provider's recommendations.</p>
-        <p>Listing information comes from direct conversations with restaurant or bakery staff, by phone or email, on the date shown. Menus, ingredients, kitchen practices, and staff can change, so <strong>always contact the restaurant or bakery to reconfirm before you go.</strong></p>
+        <p>Listing information comes from direct conversations with restaurant or bakery staff, by phone or email, on the date shown. It is what they told me, not something I tested or inspected. Menus, ingredients, kitchen practices, and staff can change, so <strong>always contact the restaurant or bakery to reconfirm before you go.</strong> Use this list as a place to start, and do your own checking.</p>
+        <p><strong>Two kinds of places:</strong> the first tab is places that told me their kitchen is peanut and tree nut free. The second tab is places that are <em>not</em> nut free but told me how they handle nut allergies. A place on the second tab can still have nuts and cross contact in the building.</p>
         <p><strong>Needs recheck:</strong> this listing has not been reconfirmed in the past six months.</p>
         <p>For an allergic reaction or medical emergency, use your prescribed emergency medication as directed and call 911. <a href="disclaimer.html">Read the full disclaimer</a>.</p>
       </div>
+
+      <div class="tabs" role="tablist" aria-label="Kind of place">
+        <button class="tab on" role="tab" type="button" data-level="nutfree" aria-selected="true">100% nut free <span class="tab-n">0</span></button>
+        <button class="tab" role="tab" type="button" data-level="accommodates" aria-selected="false">Accommodates nut allergies <span class="tab-n">0</span></button>
+      </div>
+      <p id="tabNote" class="tab-note" role="note" hidden></p>
 
       <div class="controls" aria-label="Filter the list">
         <div class="field">
@@ -84,7 +91,7 @@
         <h2 class="section-title">How I <em>check</em></h2>
         <ol class="steps">
           <li><span class="num">1</span><h3>I find the places</h3><p>I start with restaurants and bakeries around Fairfax County and see what they say online.</p></li>
-          <li><span class="num">2</span><h3>I contact them directly</h3><p>I ask whether they use or store peanuts and tree nuts, both in the food and in the kitchen, and whether the kitchen is fully nut free or shared. A website alone is never enough.</p></li>
+          <li><span class="num">2</span><h3>I contact them directly</h3><p>I ask whether they use or store peanuts and tree nuts, both in the food and in the kitchen, and whether the kitchen is fully nut free or shared. A website alone is never enough. If a place uses nuts but tells me how they handle allergy orders, I list them on the second tab and say clearly that they are not nut free.</p></li>
           <li><span class="num">3</span><h3>I add the date</h3><p>Every listing shows when I last confirmed it. After 6 months it is marked Needs recheck until I confirm again.</p></li>
         </ol>
       </div>
@@ -125,7 +132,7 @@
     <div class="wrap">
       <p class="logo-foot">Nut Free <em>Fairfax</em></p>
       <p><strong>Affiliate disclosure:</strong> Some links on this site may be affiliate links. If you buy something through one, I may earn a small commission at no extra cost to you. Commissions never affect which restaurants and bakeries are listed.</p>
-      <p><strong>Please note:</strong> Details come from staff and may be out of date or wrong. This isn't medical advice. Always confirm before you eat.</p>
+      <p><strong>Please note:</strong> Details come from staff and may be out of date or wrong. This isn't medical advice. Always confirm before you eat. Places on the "Accommodates nut allergies" tab are not nut free and can have cross contact.</p>
       <p><a href="disclaimer.html">Disclaimer</a> &middot; <a href="privacy.html">Privacy</a> &middot; <a href="affiliate-disclosure.html">Affiliate disclosure</a> &middot; <a href="mailto:nutfreefairfax@gmail.com">Contact</a></p>
       <p>Restaurants and bakeries cannot pay to be listed. A listing is not an endorsement or a guarantee of safety.</p>
     </div>

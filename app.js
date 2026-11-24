@@ -6,6 +6,19 @@
   var areaEl = document.getElementById("area");
   var typeEl = document.getElementById("type");
   var hideOldEl = document.getElementById("hideOld");
+  var tabBtns = document.querySelectorAll(".tab");
+  var tabNoteEl = document.getElementById("tabNote");
+  var currentLevel = "nutfree"; // "nutfree" or "accommodates"
+
+  var TAB_NOTES = {
+    nutfree: "",
+    accommodates:
+      "<strong>These places are not nut free.</strong> Their kitchens use nuts or may have cross contact. " +
+      "Each one told me how they handle allergy orders, and I show their words on the card. " +
+      "That is not a promise. Call them, tell them about your allergy, and decide for yourself before you go."
+  };
+
+  function levelOf(i) { return i.level === "accommodates" ? "accommodates" : "nutfree"; }
 
   function daysSince(dateStr) {
     var then = new Date(dateStr + "T00:00:00");
@@ -30,7 +43,8 @@
   function kitchenChip(k) {
     var map = {
       dedicated: "Dedicated nut free kitchen",
-      shared: "No nuts on menu, shared kitchen"
+      shared: "No nuts on menu, shared kitchen",
+      nuts: "Uses nuts in the kitchen"
     };
     return map[k] ? '<p class="chips"><span class="chip">' + map[k] + "</span></p>" : "";
   }
@@ -38,16 +52,20 @@
   function card(item) {
     var age = daysSince(item.lastVerified);
     var old = age > RECHECK_DAYS;
+    var acc = levelOf(item) === "accommodates";
     var badge = old
       ? '<span class="badge old">Needs recheck</span>'
-      : '<span class="badge ok">Confirmed with the business</span>';
+      : acc
+        ? '<span class="badge acc">Accommodates, not nut free</span>'
+        : '<span class="badge ok">Confirmed with the business</span>';
     var tel = (item.phone || "").replace(/[^0-9+]/g, "");
     var site = safeUrl(item.website);
     return (
-      '<article class="card' + (old ? " is-old" : "") + '">' +
+      '<article class="card' + (old ? " is-old" : "") + (acc ? " is-acc" : "") + '">' +
         '<div class="card-top"><h3>' + esc(item.name) + "</h3>" + badge + "</div>" +
         '<p class="meta">' + esc([item.type, item.cuisine, item.area].filter(Boolean).join(" \u00b7 ")) + "</p>" +
         kitchenChip(item.kitchen) +
+        (acc ? '<p class="warn-line">This is not a nut free kitchen. Call before you go and tell them about your allergy.</p>' : "") +
         '<p class="said">' + esc(item.staffSaid) + "</p>" +
         (item.notes ? '<p class="notes">' + esc(item.notes) + "</p>" : "") +
         '<p class="verified">Last confirmed: ' + esc(prettyDate(item.lastVerified)) +
@@ -67,6 +85,7 @@
     var type = typeEl.value;
     var hideOld = hideOldEl.checked;
     var items = (window.LISTINGS || []).filter(function (i) {
+      if (levelOf(i) !== currentLevel) return false;
       if (type !== "all" && i.type !== type) return false;
       if (hideOld && daysSince(i.lastVerified) > RECHECK_DAYS) return false;
       if (area !== "all" && i.area !== area) return false;
@@ -74,21 +93,49 @@
     });
     // Newest verified first
     items.sort(function (a, b) { return a.lastVerified < b.lastVerified ? 1 : -1; });
-    var noneAtAll = !(window.LISTINGS || []).length;
+    var noneInTab = !(window.LISTINGS || []).some(function (i) { return levelOf(i) === currentLevel; });
     listEl.innerHTML = items.map(card).join("") ||
-      '<p class="empty">' + (noneAtAll
+      '<p class="empty">' + (noneInTab
         ? "I'm reaching out to businesses now. The first places will show up here soon."
         : "Nothing here yet. Try a different area or type.") + "</p>";
     countEl.textContent = items.length + (items.length === 1 ? " place" : " places");
+    tabNoteEl.innerHTML = TAB_NOTES[currentLevel];
+    tabNoteEl.hidden = !TAB_NOTES[currentLevel];
   }
 
-  // Fill the Area dropdown from the listings, so you never edit it by hand.
-  var seen = {};
-  (window.LISTINGS || []).forEach(function (i) { if (i.area) seen[i.area] = true; });
-  Object.keys(seen).sort().forEach(function (name) {
-    var o = document.createElement("option");
-    o.value = name; o.textContent = name;
-    areaEl.appendChild(o);
+  // Fill the Area dropdown from the listings in the open tab, so you never edit it by hand.
+  function buildAreas() {
+    var seen = {};
+    (window.LISTINGS || []).forEach(function (i) {
+      if (levelOf(i) === currentLevel && i.area) seen[i.area] = true;
+    });
+    areaEl.innerHTML = '<option value="all">All areas</option>';
+    Object.keys(seen).sort().forEach(function (name) {
+      var o = document.createElement("option");
+      o.value = name; o.textContent = name;
+      areaEl.appendChild(o);
+    });
+  }
+
+  function countFor(level) {
+    return (window.LISTINGS || []).filter(function (i) { return levelOf(i) === level; }).length;
+  }
+
+  function setTab(level) {
+    currentLevel = level;
+    Array.prototype.forEach.call(tabBtns, function (b) {
+      var on = b.getAttribute("data-level") === level;
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      b.classList.toggle("on", on);
+      var n = countFor(b.getAttribute("data-level"));
+      b.querySelector(".tab-n").textContent = n;
+    });
+    buildAreas();
+    render();
+  }
+
+  Array.prototype.forEach.call(tabBtns, function (b) {
+    b.addEventListener("click", function () { setTab(b.getAttribute("data-level")); });
   });
 
   [areaEl, typeEl, hideOldEl].forEach(function (el) {
@@ -96,10 +143,10 @@
   });
   // Stats strip
   var all = window.LISTINGS || [];
-  document.getElementById("statCount").textContent = all.length;
+  document.getElementById("statCount").textContent = countFor("nutfree");
   if (all.length) {
     var latest = all.map(function (i) { return i.lastVerified; }).sort().pop();
     document.getElementById("statUpdated").textContent = prettyDate(latest);
   }
-  render();
+  setTab("nutfree");
 })();

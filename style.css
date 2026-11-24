@@ -277,3 +277,27 @@ html { scroll-behavior: smooth; }
 
 /* Let the story run the full width of the section instead of a narrow column */
 .about p { max-width: none; }
+
+
+/* Tabs: 100% nut free vs accommodates */
+.tabs { display: flex; gap: 8px; margin: 6px 0 14px; flex-wrap: wrap; }
+.tab {
+  flex: 1 1 200px; font: inherit; font-size: .98rem; cursor: pointer;
+  padding: 12px 16px; border-radius: 999px; border: 1px solid #cdbba9;
+  background: #fff; color: var(--ink);
+}
+.tab .tab-n {
+  display: inline-block; min-width: 1.6em; margin-left: 6px; padding: 0 7px;
+  border-radius: 999px; background: var(--blush); font-size: .85rem;
+}
+.tab.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.tab.on .tab-n { background: rgba(255,255,255,.25); color: #fff; }
+.tab:focus-visible { outline: 3px solid var(--warn-line); outline-offset: 2px; }
+.tab-note {
+  background: var(--warn-bg); border: 1px solid var(--warn-line);
+  border-radius: 14px; padding: 14px 18px; margin: 0 0 18px;
+}
+.tab-note[hidden] { display: none; }
+.badge.acc { background: var(--warn-bg); color: var(--old); border: 1px solid var(--warn-line); }
+.card.is-acc { border-color: var(--warn-line); }
+.warn-line { margin: 10px 0 0; font-weight: 600; color: var(--old); }
