@@ -301,3 +301,20 @@ html { scroll-behavior: smooth; }
 .badge.acc { background: var(--warn-bg); color: var(--old); border: 1px solid var(--warn-line); }
 .card.is-acc { border-color: var(--warn-line); }
 .warn-line { margin: 10px 0 0; font-weight: 600; color: var(--old); }
+
+/* Blog */
+.post-list { list-style: none; margin: 28px 0 0; padding: 0; }
+.post-list li { padding: 22px 0; border-top: 1px solid var(--line); }
+.post-list li:last-child { border-bottom: 1px solid var(--line); }
+.post-list h2 { margin: 0 0 4px; font-size: 1.45rem; color: var(--ink); }
+.post-list h2 a { color: var(--ink); text-decoration: none; }
+.post-list h2 a:hover { color: var(--accent); }
+.post-list .meta { margin: 0 0 8px; color: var(--muted); font-size: .9rem; font-style: italic; }
+.post-list p { margin: 0; }
+.doc.post h2 { color: var(--ink); }
+.doc.post ul, .doc.post ol { padding-left: 22px; }
+.doc.post li { margin: 6px 0; }
+.doc.post .lead { font-size: 1.12rem; color: var(--muted); }
+.post-note { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 14px; padding: 14px 18px; margin: 28px 0; font-size: .95rem; }
+.post-note p { margin: 0; }
+.back-link { display: inline-block; margin-top: 30px; }
