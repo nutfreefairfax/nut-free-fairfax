@@ -1,0 +1,61 @@
+/* ---- Airy layer: lighter, softer, more space ---- */
+:root {
+  --bg: #fffdfa;
+  --blush: #fbf1ea;
+  --line: #f0e6dc;
+  --accent-soft: #fdf5ef;
+}
+body { line-height: 1.8; font-size: 17px; }
+.wrap { max-width: 800px; }
+
+.nav { background: rgba(255,253,250,.92); border-bottom: 1px solid var(--line); }
+.nav-in { padding-top: 20px; padding-bottom: 20px; }
+
+.hero { background: linear-gradient(180deg, var(--blush) 0%, var(--bg) 100%); padding: 84px 0 104px; }
+.hero-in { gap: 64px; }
+.hero h1 { margin-bottom: 22px; }
+.lead { line-height: 1.8; margin-bottom: 34px; }
+.btn { padding: 14px 30px; }
+.btn.ghost { border-color: #e2c9b8; }
+
+.strip { background: transparent; color: var(--muted); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.strip strong { color: var(--ink); }
+.strip-in { padding-top: 20px; padding-bottom: 20px; }
+
+.section-title { margin: 96px 0 26px; font-size: clamp(1.9rem, 4.5vw, 2.5rem); }
+.disclaimer { background: #fffaf0; border: 1px solid #f1dfb8; border-radius: 20px; padding: 22px 26px; margin: 12px 0 40px; }
+.controls { gap: 18px 20px; margin-bottom: 14px; }
+select, input[type="email"] { border-color: #e6d6c8; }
+.count { margin: 34px 0 18px; }
+
+.card { border: 1px solid var(--line); border-radius: 22px; padding: 28px 30px; margin-bottom: 26px; box-shadow: 0 10px 30px rgba(120, 80, 50, .06); }
+.card.is-old { border-color: #f1dfb8; }
+.card h3 { font-size: 1.45rem; }
+.links a { border-color: #e2c9b8; }
+.links a:first-child { border-color: var(--accent); }
+.addr { margin-top: 18px; }
+
+.how { background: var(--blush); margin-top: 110px; padding-bottom: 96px; }
+.how .section-title { padding-top: 96px; }
+.steps { gap: 36px; }
+.steps li { background: transparent; border-radius: 0; padding: 22px 0 0; border-top: 1px solid #e6cdbb; }
+.steps p { line-height: 1.75; }
+
+.about p { line-height: 1.85; }
+.news { background: var(--bg); border-top: 1px solid var(--line); margin-top: 110px; padding: 84px 0 92px; }
+.box { margin-top: 90px; }
+
+.site-footer { background: var(--blush); color: var(--muted); padding: 64px 0 72px; border-top: 0; line-height: 1.8; }
+.site-footer a { color: var(--accent); }
+.logo-foot { color: var(--ink); }
+
+.seal { background: #fff; color: var(--ink); box-shadow: 0 10px 28px rgba(120, 80, 50, .16); outline: 2px dashed #e2b9a4; }
+.seal small { color: var(--accent); }
+
+@media (max-width: 720px) {
+  .hero { padding: 48px 0 70px; }
+  .section-title { margin-top: 72px; }
+  .how { margin-top: 80px; }
+  .how .section-title { padding-top: 72px; }
+  .card { padding: 22px; }
+}
