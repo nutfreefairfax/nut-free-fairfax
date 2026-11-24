@@ -17,7 +17,7 @@ window.LISTINGS = [
     phone: "571-336-2280",
     website: "https://obubblebakery.com",
     lastVerified: "2026-11-24",
-    staffSaid: "The manager said no peanuts or tree nuts are used or stored, and the kitchen is nut free.",
+    staffSaid: "The business confirmed that no peanuts or tree nuts are used or stored on the premises, and that the kitchen is nut-free.",
     notes: "Their website also says all products are peanut free and tree nut free."
   }
 ];
