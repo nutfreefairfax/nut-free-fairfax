@@ -342,3 +342,6 @@ html { scroll-behavior: smooth; }
 @media (max-width: 520px) { .post-list li.has-thumb { grid-template-columns: 64px 1fr; gap: 14px; } .post-list .thumb img { width: 64px; border-radius: 10px; } .post-list li.has-thumb h2 { font-size: 1.15rem; } .post-list li.has-thumb p { font-size: .95rem; } }
 .post-list .thumb { display: block; }
 .post-list .thumb img { height: auto; }
+
+/* Photo in a post: smaller, same left edge as the text */
+.doc.post .post-photo { max-width: 600px; margin: 16px 0 26px; }
