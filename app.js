@@ -12,7 +12,7 @@
 
   var TAB_NOTES = {
     nutfree:
-      "Businesses that have shared that their kitchens are peanut and tree nut free. This information comes from the business and was not independently inspected.",
+      "Businesses that confirmed their kitchens are peanut and tree nut free. This information comes from the business and was not independently inspected.",
     accommodates:
       "These places are not nut-free, and nuts may be used in their kitchens or pose a risk of cross-contact. " +
       "They\u2019ve shared how they handle food allergy requests, which I\u2019ve included to help you make informed choices. " +
