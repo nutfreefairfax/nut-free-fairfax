@@ -72,7 +72,7 @@
         '<p class="said">' + esc(item.staffSaid) + "</p>" +
         (item.notes ? '<p class="notes">' + esc(item.notes) + "</p>" : "") +
         '<p class="verified">Last confirmed: ' + esc(prettyDate(item.lastVerified)) +
-          " (" + age + " days ago)</p>" +
+          " (" + (age === 0 ? "today" : age === 1 ? "1 day ago" : age + " days ago") + ")</p>" +
         '<p class="links">' +
           (tel ? '<a href="tel:' + esc(tel) + '">Call ' + esc(item.phone) + "</a>" : "") +
           (site ? ' <a href="' + esc(site) + '" rel="noopener noreferrer nofollow">Website</a>' : "") +
