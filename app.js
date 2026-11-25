@@ -74,7 +74,7 @@
           " (" + age + " days ago)</p>" +
         '<p class="links">' +
           (tel ? '<a href="tel:' + esc(tel) + '">Call ' + esc(item.phone) + "</a>" : "") +
-          (site ? ' <a href="' + esc(site) + '" rel="noopener">Website</a>' : "") +
+          (site ? ' <a href="' + esc(site) + '" rel="noopener noreferrer nofollow">Website</a>' : "") +
         "</p>" +
         '<p class="addr">' + esc(item.address) + "</p>" +
         '<p class="report"><a href="mailto:' + CONTACT_EMAIL + '?subject=' + encodeURIComponent("Correction: " + item.name) + '">See something out of date? Tell me.</a></p>' +
