@@ -11,7 +11,8 @@
   var currentLevel = "nutfree"; // "nutfree" or "accommodates"
 
   var TAB_NOTES = {
-    nutfree: "",
+    nutfree:
+      "Businesses that have shared that their kitchens are peanut and tree nut free. This information comes from the business and was not independently inspected.",
     accommodates:
       "These places are not nut-free, and nuts may be used in their kitchens or pose a risk of cross-contact. " +
       "They\u2019ve shared how they handle food allergy requests, which I\u2019ve included to help you make informed choices. " +
@@ -43,7 +44,7 @@
 
   function kitchenChip(k) {
     var map = {
-      dedicated: "Dedicated nut free kitchen",
+      dedicated: "Business reported dedicated nut free kitchen",
       shared: "No nuts on menu, shared kitchen",
       nuts: "Uses nuts in the kitchen",
       stored: "Nuts stored on site"
@@ -147,6 +148,7 @@
   // Stats strip
   var all = window.LISTINGS || [];
   document.getElementById("statCount").textContent = countFor("nutfree");
+  document.getElementById("statLabel").textContent = countFor("nutfree") === 1 ? "business confirmed nut free kitchen" : "business confirmed nut free kitchens";
   if (all.length) {
     var latest = all.map(function (i) { return i.lastVerified; }).sort().pop();
     document.getElementById("statUpdated").textContent = prettyDate(latest);
