@@ -345,5 +345,5 @@ html { scroll-behavior: smooth; }
 
 /* Photo in a post: smaller, same left edge as the text */
 .doc.post .post-photo { max-width: none; margin: 24px 0 26px; }
-.doc.post .post-photo img { aspect-ratio: 2 / 1; object-fit: cover; object-position: center 45%; }
-@media (max-width: 520px) { .doc.post .post-photo img { aspect-ratio: 3 / 2; } }
+.doc.post .post-photo img { width: 100%; height: auto; max-height: 400px; object-fit: contain; background: var(--blush); }
+@media (max-width: 520px) { .doc.post .post-photo img { max-height: 320px; } }
