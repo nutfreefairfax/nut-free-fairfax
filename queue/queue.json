@@ -5,8 +5,7 @@
     "h1": "The One Text To Send The Host Before The Party",
     "blurb": "A short text you can copy and send before the party, and what to do if the answer is vague.",
     "thumb": "party-snack-table-wide.jpg",
-    "hold": true,
-    "hold_reason": "Waiting for Jan's own photo images/party-snack-table-wide.jpg on main. Do not publish without it."
+    "hold": false
   },
   {
     "file": "02-how-to-ask-who-made-the-food-nut-allergy.html",
