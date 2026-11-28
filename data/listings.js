@@ -23,10 +23,8 @@ window.LISTINGS = [
     lastVerified: "2026-11-24",
     method: "phone",
     staffSaid: [
-      "The business confirmed that no peanuts or tree nuts are used or stored on the premises.",
-      "The business confirmed that the kitchen is nut free."
-    ],
-    extra: "Their website also says all products are peanut free and tree nut free."
+      "Staff confirmed that no peanuts or tree nuts are used or stored on the premises, and that the kitchen is nut free."
+    ]
   },
   {
     name: "Fairfax Bakery",
