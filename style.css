@@ -363,3 +363,6 @@ html { scroll-behavior: smooth; }
   .logo { font-size: 1.1rem; }
   .nav-links a[href="blog/"], .nav-links a[href="index.html"] { display: inline; }
 }
+
+/* Disclaimer sub headings */
+.disclaimer h4 { margin: 14px 0 2px; font-size: 1rem; color: var(--accent); }
