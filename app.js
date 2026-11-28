@@ -59,13 +59,15 @@
       : "";
   }
 
-  // The standard Important line. Every card gets the same first sentence and the same contact line.
-  // Only the optional notCovered sentence (what was not asked) changes from place to place.
+  // The standard Important line. Two fixed versions, one per tab. Only the optional notCovered sentence changes per place.
   function importantText(item) {
     var noun = item.type === "restaurant" ? "restaurant" : "bakery";
+    var contact = "Contact the " + noun + " directly to confirm its current practices.";
+    if (levelOf(item) !== "accommodates") {
+      return "This is what staff shared, not an inspection. " + (item.notCovered ? item.notCovered + " " : "") + contact;
+    }
     return "This covers what staff shared, not individual ingredients or products. " +
-      (item.notCovered ? item.notCovered + " " : "") +
-      "Contact the " + noun + " directly to confirm its current practices.";
+      (item.notCovered ? item.notCovered + " " : "") + contact;
   }
 
   function methodText(m) {
