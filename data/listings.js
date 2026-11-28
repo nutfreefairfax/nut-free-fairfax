@@ -6,7 +6,10 @@
 // kitchen: use exactly "dedicated" (dedicated nut free kitchen), "shared" (no nuts on menu, shared kitchen), "nuts" (uses nuts in the kitchen) or "stored" (nuts stored on site).
 //          Leave it out if staff did not say. Only record what staff told you.
 // area: spell it the same way every time. Use "City of Fairfax" for places inside the city.
-// staffSaid: say what STAFF told you, in plain words.
+// staffSaid: a list of short plain sentences, one per thing STAFF said. Lead with any nuts they use. Each line is shown as a bullet.
+// important: one line about what the confirmation does NOT cover (shown as "Important:"). Use it on every accommodates card.
+// extra: optional neutral line, such as something their website says (shown as "Also:"). Not used for confirmation.
+// method: how you confirmed it: "phone", "email" or "message". Shown after the date.
 window.LISTINGS = [
   {
     name: "Out of the Bubble Bakery",
@@ -18,8 +21,12 @@ window.LISTINGS = [
     phone: "571-336-2280",
     website: "https://obubblebakery.com",
     lastVerified: "2026-11-24",
-    staffSaid: "The business confirmed that no peanuts or tree nuts are used or stored on the premises, and that the kitchen is nut-free.",
-    notes: "Their website also says all products are peanut free and tree nut free."
+    method: "phone",
+    staffSaid: [
+      "The business confirmed that no peanuts or tree nuts are used or stored on the premises.",
+      "The business confirmed that the kitchen is nut free."
+    ],
+    extra: "Their website also says all products are peanut free and tree nut free."
   },
   {
     name: "Fairfax Bakery",
@@ -32,8 +39,14 @@ window.LISTINGS = [
     phone: "703-277-9999",
     website: "https://fairfaxbakery.com",
     lastVerified: "2026-11-24",
-    staffSaid: "Staff said they do not use peanuts. They do use tree nuts, specifically walnuts and pistachios. They said about 90 percent of their products are nut free. They said they bake allergy orders separately and check ingredient sources before adding them.",
-    notes: "Tree nuts are used in this bakery. I did not ask about other tree nuts, so ask them directly."
+    method: "phone",
+    staffSaid: [
+      "The bakery uses walnuts and pistachios.",
+      "The bakery does not use peanuts.",
+      "Allergy orders are prepared separately, and ingredient sources are checked before they are added.",
+      "Staff estimate that about 90% of products contain no nuts."
+    ],
+    important: "Other tree nuts were not discussed. Contact the bakery directly to ask about them and confirm its current practices."
   },
   {
     name: "Manjares Bakery",
@@ -45,7 +58,11 @@ window.LISTINGS = [
     address: "9540 Blenheim Blvd, Fairfax, VA 22031",
     phone: "571-596-4660",
     lastVerified: "2026-11-24",
-    staffSaid: "Staff said there are no peanuts or tree nuts in the kitchen, but nuts are kept in their storage room, and everything has its own compartment.",
-    notes: "This covers what they told me about their kitchen, not individual ingredients or products."
+    method: "phone",
+    staffSaid: [
+      "Nuts are kept in the storage room, and everything has its own compartment.",
+      "There are no peanuts or tree nuts in the kitchen."
+    ],
+    important: "This covers what staff shared about the kitchen, not individual ingredients or products. Contact the bakery directly to confirm its current practices."
   }
 ];

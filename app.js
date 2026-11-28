@@ -52,6 +52,18 @@
     return map[k] ? '<p class="chips"><span class="chip">' + map[k] + "</span></p>" : "";
   }
 
+  function saidList(v) {
+    var lines = Array.isArray(v) ? v : (v ? [v] : []);
+    return lines.length
+      ? '<ul class="said">' + lines.map(function (l) { return "<li>" + esc(l) + "</li>"; }).join("") + "</ul>"
+      : "";
+  }
+
+  function methodText(m) {
+    var map = { phone: "by phone", email: "by email", message: "by message" };
+    return map[m] || "";
+  }
+
   function card(item) {
     var age = daysSince(item.lastVerified);
     var old = age > RECHECK_DAYS;
@@ -69,9 +81,12 @@
         '<p class="meta">' + esc([item.type, item.cuisine, item.area].filter(Boolean).join(" \u00b7 ")) + "</p>" +
         kitchenChip(item.kitchen) +
         (acc ? '<p class="warn-line">This is not a nut free kitchen. Call before you go and tell them about your allergy.</p>' : "") +
-        '<p class="said">' + esc(item.staffSaid) + "</p>" +
-        (item.notes ? '<p class="notes">' + esc(item.notes) + "</p>" : "") +
+        '<p class="said-label">What the staff shared</p>' +
+        saidList(item.staffSaid) +
+        (item.important ? '<p class="important"><strong>Important:</strong> ' + esc(item.important) + "</p>" : "") +
+        (item.extra ? '<p class="extra">Also: ' + esc(item.extra) + "</p>" : "") +
         '<p class="verified">Last confirmed: ' + esc(prettyDate(item.lastVerified)) +
+          (methodText(item.method) ? ", " + methodText(item.method) : "") +
           " (" + (age === 0 ? "today" : age === 1 ? "1 day ago" : age + " days ago") + ")</p>" +
         '<p class="links">' +
           (tel ? '<a href="tel:' + esc(tel) + '">Call ' + esc(item.phone) + "</a>" : "") +
