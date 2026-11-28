@@ -14,7 +14,7 @@
     nutfree:
       "Businesses that confirmed their kitchens are peanut and tree nut free. This information comes from the business and was not independently inspected.",
     accommodates:
-      "These places are not nut-free, and nuts may be used in their kitchens or pose a risk of cross-contact. " +
+      "These places are not nut free, and nuts may be used in their kitchens or pose a risk of cross-contact. " +
       "They\u2019ve shared how they handle food allergy requests, which I\u2019ve included to help you make informed choices. " +
       "Please remember that practices can vary, and no allergen-free meal is guaranteed. " +
       "Always call ahead, discuss your specific allergy with the staff, and decide if you\u2019re comfortable dining there."
@@ -59,6 +59,15 @@
       : "";
   }
 
+  // The standard Important line. Every card gets the same first sentence and the same contact line.
+  // Only the optional notCovered sentence (what was not asked) changes from place to place.
+  function importantText(item) {
+    var noun = item.type === "restaurant" ? "restaurant" : "bakery";
+    return "This covers what staff shared, not individual ingredients or products. " +
+      (item.notCovered ? item.notCovered + " " : "") +
+      "Contact the " + noun + " directly to confirm its current practices.";
+  }
+
   function methodText(m) {
     var map = { phone: "by phone", email: "by email", message: "by message" };
     return map[m] || "";
@@ -83,8 +92,7 @@
         (acc ? '<p class="warn-line">This is not a nut free kitchen. Call before you go and tell them about your allergy.</p>' : "") +
         '<p class="said-label">What the staff shared</p>' +
         saidList(item.staffSaid) +
-        (item.important ? '<p class="important"><strong>Important:</strong> ' + esc(item.important) + "</p>" : "") +
-        (item.extra ? '<p class="extra">' + esc(item.extra) + "</p>" : "") +
+        '<p class="important"><strong>Important:</strong> ' + esc(importantText(item)) + "</p>" +
         '<p class="verified">Last confirmed: ' + esc(prettyDate(item.lastVerified)) +
           (methodText(item.method) ? ", " + methodText(item.method) : "") +
           " (" + (age === 0 ? "today" : age === 1 ? "1 day ago" : age + " days ago") + ")</p>" +

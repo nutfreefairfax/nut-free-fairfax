@@ -7,8 +7,7 @@
 //          Leave it out if staff did not say. Only record what staff told you.
 // area: spell it the same way every time. Use "City of Fairfax" for places inside the city.
 // staffSaid: a list of short plain sentences, one per thing STAFF said. Lead with any nuts they use. Each line is shown as a bullet.
-// important: shown as "Important:" on EVERY card. First sentence is always: "This covers what staff shared, not individual ingredients or products." Then add anything specific that was not asked or not covered, then the contact line.
-// extra: optional neutral line, such as something their website says (shown as a plain line). Not used for confirmation.
+// notCovered: optional. One short sentence on what was NOT asked or covered, such as "Other tree nuts were not discussed." The standard "Important" line is added by the site, do not write it here.
 // method: how you confirmed it: "phone", "email" or "message". Shown after the date.
 window.LISTINGS = [
   {
@@ -24,8 +23,7 @@ window.LISTINGS = [
     method: "phone",
     staffSaid: [
       "Staff confirmed that no peanuts or tree nuts are used or stored on the premises, and that the kitchen is nut free."
-    ],
-    important: "This covers what staff shared, not individual ingredients or products. Contact the bakery directly to confirm its current practices."
+    ]
   },
   {
     name: "Fairfax Bakery",
@@ -45,7 +43,7 @@ window.LISTINGS = [
       "Allergy orders are prepared separately, and ingredient sources are checked before they are added.",
       "Staff estimate that about 90% of products contain no nuts."
     ],
-    important: "This covers what staff shared, not individual ingredients or products. Other tree nuts were not discussed. Contact the bakery directly to ask about them and confirm its current practices."
+    notCovered: "Other tree nuts were not discussed."
   },
   {
     name: "Manjares Bakery",
@@ -62,6 +60,5 @@ window.LISTINGS = [
       "Nuts are kept in the storage room, and everything has its own compartment.",
       "There are no peanuts or tree nuts in the kitchen."
     ],
-    important: "This covers what staff shared about the kitchen, not individual ingredients or products. Contact the bakery directly to confirm its current practices."
   }
 ];
