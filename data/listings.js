@@ -8,7 +8,7 @@
 // area: spell it the same way every time. Use "City of Fairfax" for places inside the city.
 // staffSaid: a list of short plain sentences, one per thing STAFF said. Lead with any nuts they use. Each line is shown as a bullet.
 // important: one line about what the confirmation does NOT cover (shown as "Important:"). Use it on every accommodates card.
-// extra: optional neutral line, such as something their website says (shown as "Also:"). Not used for confirmation.
+// extra: optional neutral line, such as something their website says (shown as a plain line). Not used for confirmation.
 // method: how you confirmed it: "phone", "email" or "message". Shown after the date.
 window.LISTINGS = [
   {

@@ -84,7 +84,7 @@
         '<p class="said-label">What the staff shared</p>' +
         saidList(item.staffSaid) +
         (item.important ? '<p class="important"><strong>Important:</strong> ' + esc(item.important) + "</p>" : "") +
-        (item.extra ? '<p class="extra">Also: ' + esc(item.extra) + "</p>" : "") +
+        (item.extra ? '<p class="extra">' + esc(item.extra) + "</p>" : "") +
         '<p class="verified">Last confirmed: ' + esc(prettyDate(item.lastVerified)) +
           (methodText(item.method) ? ", " + methodText(item.method) : "") +
           " (" + (age === 0 ? "today" : age === 1 ? "1 day ago" : age + " days ago") + ")</p>" +
